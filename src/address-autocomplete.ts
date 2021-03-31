@@ -104,6 +104,11 @@ let autocompleteService: google.maps.places.AutocompleteService;
 
 export const GoogleAddressAutocomplete = async function (text: string, fuzzy: boolean = true): Promise<Array<AddressAutocompleteResult>> {
 
+  if (!(window as any).google) {
+    console.warn(`'google' is not defined`);
+    return;
+  }
+
   if (!autocompleteService) {
     autocompleteService = new google.maps.places.AutocompleteService();
   }
