@@ -14,11 +14,12 @@ type AddressAutocompleteParams = {
   text: string,
 };
 
-export type AddressAutocompleteResult = {
-  text: string
-  address: string,
-  complete: boolean,
-  location: { lat: number, lon: number }
+export interface AddressAutocompleteResult {
+  text: string;
+  address: string;
+  complete: boolean;
+  location: { lat: number, lon: number };
+  extra?: {[key: string]: any}
 }
 
 
@@ -94,8 +95,12 @@ export const DawaAddressAutocomplete = async function (text: string, fuzzy: bool
     address: i.forslagstekst.replace(", ,", ','), // for some reason dawa sometimes returns ", ," it looks ugly
     complete: (i.type == "adresse" || i.type == "adgangsadresse"),
     location: { lat: i.data.y, lon: i.data.x },
+    extra: {
+      dawa_id: i.data?.id,
+      zipcode: i.data?.postnr
+    },
     _dawa_type: i.type,
-  }));
+  }) as AddressAutocompleteResult);
   return results;
 }
 

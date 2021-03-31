@@ -3,7 +3,7 @@ declare type AddressAutocompleteParams = {
     provider?: string;
     text: string;
 };
-export declare type AddressAutocompleteResult = {
+export interface AddressAutocompleteResult {
     text: string;
     address: string;
     complete: boolean;
@@ -11,7 +11,10 @@ export declare type AddressAutocompleteResult = {
         lat: number;
         lon: number;
     };
-};
+    extra?: {
+        [key: string]: any;
+    };
+}
 export declare const AddressAutocomplete: (params: AddressAutocompleteParams) => Promise<AddressAutocompleteResult[]>;
 export declare const FallbackAddressAutocomplete: (text: string, primary: string, secondary: string) => Promise<AddressAutocompleteResult[]>;
 export declare const DawaAddressAutocomplete: (text: string, fuzzy?: boolean) => Promise<Array<AddressAutocompleteResult>>;
