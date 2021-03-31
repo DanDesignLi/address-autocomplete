@@ -3,7 +3,7 @@ declare type AddressAutocompleteParams = {
     provider?: string;
     text: string;
 };
-declare type AddressAutocompleteResult = {
+export declare type AddressAutocompleteResult = {
     text: string;
     address: string;
     complete: boolean;
