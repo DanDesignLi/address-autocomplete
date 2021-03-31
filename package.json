@@ -2,7 +2,10 @@
   "name": "address-autocomplete",
   "version": "1.0.0",
   "description": "Simpel javascript library for address autocompletion, for DK addresses uses DAWA, for others uses Google",
-  "scripts": {},
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/zealofzebras/address-autocomplete.git"
@@ -18,5 +21,18 @@
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-bootstrap-typeahead": "^5.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.13.13",
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@types/react-bootstrap-typeahead": "^5.1.4",
+    "babel-loader": "^8.2.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-loader": "^8.1.0",
+    "typescript": "^4.2.3"
   }
 }

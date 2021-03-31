@@ -1,7 +1,6 @@
 import React, { Fragment, useState, useRef } from 'react';
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import { FallbackAddressAutocomplete } from './address-autocomplete'
-import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 
 // This is prepared to use Formik 
@@ -25,6 +24,17 @@ const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value,
   // Bypass client-side filtering by returning `true`. Results are already
   // filtered by the search endpoint, so no need to do it again.
   const filterBy = () => true;
+
+  const onChange = (selected: any) => {
+      const value = (selected.length > 0 && selected[0].complete) ? selected[0].address : '';
+      const reshow = (selected.length > 0 && !selected[0].complete);
+      if (reshow && !_instance.current.isMenuShown) {
+          _instance.current.toggleMenu();
+      } else {
+          setFieldValue && setFieldValue(name, value);
+      }
+  }
+
   return (
     <AsyncTypeahead
       filterBy={filterBy}
@@ -39,15 +49,7 @@ const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value,
       onSearch={handleSearch}
       open={_forceOpen}
       options={options}
-      onChange={(selected: any) => {
-        const value = (selected.length > 0 && selected[0].complete) ? selected[0].address : '';
-        const reshow = (selected.length > 0 && !selected[0].complete);
-        if (reshow && !_instance.current.isMenuShown) {
-          _instance.current.toggleMenu();
-        } else {
-          setFieldValue && setFieldValue(name, value);
-        }
-      }}
+      onChange={onChange}
       /*onInputChange={(text, event) => setFieldValue && setFieldValue(name, text)}*/
       onBlur={(e: any) => setFieldTouched && setFieldTouched(name, true)}
       placeholder={placeholder}
