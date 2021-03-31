@@ -15,3 +15,12 @@ This requires the following packages:
     "formik": "^2.2.6",
 
     and google maps client side javascript
+
+# Usage in other projects
+Install library  
+`$ npm i -s https://github.com/zealofzebras/address-autocomplete.git`  
+
+# Before commit
+Remember to build the project, if you want the changes in other projects.  
+It's required to have rollup installed before building `$ npm i -g rollup`  
+`$ npm run build`
