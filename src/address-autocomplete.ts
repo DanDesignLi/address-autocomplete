@@ -14,7 +14,7 @@ type AddressAutocompleteParams = {
   text: string,
 };
 
-type AddressAutocompleteResult = {
+export type AddressAutocompleteResult = {
   text: string
   address: string,
   complete: boolean,

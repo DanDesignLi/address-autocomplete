@@ -1,12 +1,20 @@
 import React, { Fragment, useState, useRef } from 'react';
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
-import { FallbackAddressAutocomplete } from './address-autocomplete'
+import {AddressAutocompleteResult, FallbackAddressAutocomplete} from './address-autocomplete'
 
+interface AddressInputParams {
+    id: string;
+    name: string;
+    isValid?: boolean;
+    isInvalid?: boolean;
+    placeholder?: string;
+    value?: string;
+    setFieldValue: (name: string|undefined, value: string|undefined, options: AddressAutocompleteResult[]) => void
+    setFieldTouched: (name: string|undefined, value: boolean) => void
+}
 
 // This is prepared to use Formik 
-const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value,
-  setFieldValue,
-  setFieldTouched }) => {
+const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value, setFieldValue, setFieldTouched }: AddressInputParams) => {
   const [isLoading, setIsLoading] = useState(false);
   const [options, setOptions] = useState([]);
   const _instance = useRef(null);
@@ -31,7 +39,7 @@ const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value,
       if (reshow && !_instance.current.isMenuShown) {
           _instance.current.toggleMenu();
       } else {
-          setFieldValue && setFieldValue(name, value);
+          setFieldValue && setFieldValue(name, value, options);
       }
   }
 
