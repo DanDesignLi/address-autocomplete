@@ -10,5 +10,5 @@ interface AddressInputParams {
     setFieldValue: (name: string | undefined, value: string | undefined, options: AddressAutocompleteResult[]) => void;
     setFieldTouched: (name: string | undefined, value: boolean) => void;
 }
-declare const AddressInput: ({ id, name, isValid, isInvalid, placeholder, value, setFieldValue, setFieldTouched }: AddressInputParams) => JSX.Element;
-export default AddressInput;
+export declare const AddressInput: ({ id, name, isValid, isInvalid, placeholder, value, setFieldValue, setFieldTouched }: AddressInputParams) => JSX.Element;
+export {};
