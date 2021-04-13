@@ -14,7 +14,7 @@ interface AddressInputParams {
 }
 
 // This is prepared to use Formik 
-const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value, setFieldValue, setFieldTouched }: AddressInputParams) => {
+export const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value, setFieldValue, setFieldTouched }: AddressInputParams) => {
   const [isLoading, setIsLoading] = useState(false);
   const [options, setOptions] = useState([]);
   const _instance = useRef(null);
@@ -71,5 +71,3 @@ const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value, setFie
     />
   );
 };
-
-export default AddressInput;
