@@ -13,7 +13,7 @@ interface AddressInputParams {
     setFieldTouched: (name: string|undefined, value: boolean) => void
 }
 
-// This is prepared to use Formik 
+// This is prepared to use Formik
 export const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value, setFieldValue, setFieldTouched }: AddressInputParams) => {
   const [isLoading, setIsLoading] = useState(false);
   const [options, setOptions] = useState([]);
@@ -62,6 +62,7 @@ export const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value,
       onBlur={(e: any) => setFieldTouched && setFieldTouched(name, true)}
       placeholder={placeholder}
       ref={_instance}
+      useCache={false}
       defaultInputValue={value}
       renderMenuItemChildren={(option, props) => (
         <Fragment>
