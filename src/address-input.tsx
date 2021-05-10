@@ -9,7 +9,7 @@ interface AddressInputParams {
     isInvalid?: boolean;
     placeholder?: string;
     value?: string;
-    setFieldValue: (name: string|undefined, value: string|undefined, options: AddressAutocompleteResult[]) => void
+    setFieldValue: (name: string|undefined, value: AddressAutocompleteResult[]) => void
     setFieldTouched: (name: string|undefined, value: boolean) => void
 }
 
@@ -34,12 +34,11 @@ export const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value,
   const filterBy = () => true;
 
   const onChange = (selected: any) => {
-      const value = (selected.length > 0 && selected[0].complete) ? selected[0].address : '';
       const reshow = (selected.length > 0 && !selected[0].complete);
       if (reshow && !_instance.current.isMenuShown) {
           _instance.current.toggleMenu();
       } else {
-          setFieldValue && setFieldValue(name, value, options);
+          setFieldValue && setFieldValue(name, selected);
       }
   }
 
@@ -62,7 +61,6 @@ export const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value,
       onBlur={(e: any) => setFieldTouched && setFieldTouched(name, true)}
       placeholder={placeholder}
       ref={_instance}
-      useCache={false}
       defaultInputValue={value}
       renderMenuItemChildren={(option, props) => (
         <Fragment>
