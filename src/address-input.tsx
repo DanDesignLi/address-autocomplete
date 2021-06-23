@@ -10,11 +10,13 @@ interface AddressInputParams {
     placeholder?: string;
     value?: string;
     setFieldValue: (name: string|undefined, value: AddressAutocompleteResult[]) => void
-    setFieldTouched: (name: string|undefined, value: boolean) => void
+    setFieldTouched: (name: string|undefined, value: boolean) => void,
+    emptyLabel: React.ReactNode;
+    searchText: React.ReactNode;
 }
 
 // This is prepared to use Formik
-export const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value, setFieldValue, setFieldTouched }: AddressInputParams) => {
+export const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value, setFieldValue, setFieldTouched, emptyLabel, searchText }: AddressInputParams) => {
   const [isLoading, setIsLoading] = useState(false);
   const [options, setOptions] = useState([]);
   const _instance = useRef(null);
@@ -49,6 +51,8 @@ export const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value,
       /*name={name}*/
       isLoading={isLoading}
       minLength={3}
+      emptyLabel={emptyLabel}
+      searchText={searchText}
       labelKey="text"
       isValid={isValid}
       isInvalid={isInvalid}

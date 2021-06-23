@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 import { AddressAutocompleteResult } from './address-autocomplete';
 interface AddressInputParams {
     id: string;
@@ -9,6 +9,8 @@ interface AddressInputParams {
     value?: string;
     setFieldValue: (name: string | undefined, value: AddressAutocompleteResult[]) => void;
     setFieldTouched: (name: string | undefined, value: boolean) => void;
+    emptyLabel: React.ReactNode;
+    searchText: React.ReactNode;
 }
-export declare const AddressInput: ({ id, name, isValid, isInvalid, placeholder, value, setFieldValue, setFieldTouched }: AddressInputParams) => JSX.Element;
+export declare const AddressInput: ({ id, name, isValid, isInvalid, placeholder, value, setFieldValue, setFieldTouched, emptyLabel, searchText }: AddressInputParams) => JSX.Element;
 export {};
