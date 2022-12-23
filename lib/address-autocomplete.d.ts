@@ -1,4 +1,4 @@
-declare type AddressAutocompleteParams = {
+type AddressAutocompleteParams = {
     country?: string;
     provider?: string;
     text: string;
