@@ -8,14 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/zealofzebras/address-autocomplete.git"
+    "url": "git+ssh://git@github.com/DanDesignLi/address-autocomplete.git"
   },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zealofzebras/address-autocomplete/issues"
-  },
-  "homepage": "https://github.com/zealofzebras/address-autocomplete#readme",
+  "license": "ISC", ,
+  "homepage": "https://github.com/DanDesignLi/address-autocomplete.git",
   "dependencies": {
     "@types/google-maps-web": "^3.43.4",
     "react-bootstrap": "^1.5.2",
