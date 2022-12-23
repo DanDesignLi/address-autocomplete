@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Efiware/Vios version of address-autocomplete. Simple javascript library for address autocompletion, for DK addresses uses DAWA, for others uses Google",
   "main": "lib/index.js",
-  "type": "module",
   "scripts": {
     "build": "rollup -c"
   },
