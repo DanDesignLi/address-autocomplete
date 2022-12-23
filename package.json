@@ -11,7 +11,7 @@
     "url": "git+ssh://git@github.com/DanDesignLi/address-autocomplete.git"
   },
   "author": "",
-  "license": "ISC", ,
+  "license": "ISC",
   "homepage": "https://github.com/DanDesignLi/address-autocomplete.git",
   "dependencies": {
     "@types/google-maps-web": "^3.43.4",
