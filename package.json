@@ -15,8 +15,8 @@
   "homepage": "https://github.com/DanDesignLi/address-autocomplete.git",
   "dependencies": {
     "@types/google-maps-web": "^3.43.4",
-    "react-bootstrap": "^1.6.6",
-    "react-bootstrap-typeahead": "^5.1.4"
+    "react-bootstrap": "^2.7.0",
+    "react-bootstrap-typeahead": "^6.0.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
