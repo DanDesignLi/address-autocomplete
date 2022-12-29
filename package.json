@@ -16,7 +16,7 @@
   "dependencies": {
     "@types/google-maps-web": "^3.43.4",
     "react-bootstrap": "^2.7.0",
-    "react-bootstrap-typeahead": "^6.0.0"
+    "react-bootstrap-typeahead": "^5.1.8"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -28,7 +28,7 @@
     "@babel/preset-react": "^7.13.13",
     "@rollup/plugin-commonjs": "^18.0.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
-    "@types/react-bootstrap-typeahead": "^5.1.4",
+    "@types/react-bootstrap-typeahead": "^5.1.8",
     "babel-loader": "^8.2.5",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.34.1",
