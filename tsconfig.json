@@ -4,6 +4,10 @@
     "declarationDir": "build",
     "module": "esnext",
     "target": "es5",
+    "baseUrl": "./",
+    "paths": {
+      "tslib" : ["./node_modules/tslib/tslib.d.ts"]
+    },
     "lib": [
       "es6",
       "dom",

@@ -68,7 +68,7 @@ export const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value,
       defaultInputValue={value}
       renderMenuItemChildren={(option, props) => (
         <Fragment>
-          <span>{option.address}</span>
+          <span>{(option as any).address}</span>
         </Fragment>
       )}
     />
