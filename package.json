@@ -15,20 +15,20 @@
   "homepage": "https://github.com/DanDesignLi/address-autocomplete.git",
   "dependencies": {
     "@types/google-maps-web": "^3.43.4",
-    "react-bootstrap": "^2.8.0",
-    "react-bootstrap-typeahead": "^6.2.3"
+    "react-bootstrap": "^2.9.1",
+    "react-bootstrap-typeahead": "^6.3.2"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.19",
-    "@babel/preset-env": "^7.22.15",
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
     "@rollup/plugin-commonjs": "^18.1.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
-    "@types/react-bootstrap-typeahead": "^5.1.9",
+    "@types/react-bootstrap-typeahead": "^5.1.11",
     "babel-loader": "^8.3.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.34.1",
