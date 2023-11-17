@@ -13,10 +13,11 @@ interface AddressInputParams {
     setFieldTouched: (name: string|undefined, value: boolean) => void,
     emptyLabel: React.ReactNode;
     searchText: React.ReactNode;
+    onKeyDown?: any
 }
 
 // This is prepared to use Formik
-export const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value, setFieldValue, setFieldTouched, emptyLabel, searchText }: AddressInputParams) => {
+export const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value, setFieldValue, setFieldTouched, emptyLabel, searchText, onKeyDown }: AddressInputParams) => {
   const [isLoading, setIsLoading] = useState(false);
   const [options, setOptions] = useState([]);
   const _instance = useRef(null);
@@ -61,6 +62,7 @@ export const AddressInput = ({ id, name, isValid, isInvalid, placeholder, value,
       open={_forceOpen}
       options={options}
       onChange={onChange}
+      onKeyDown={onKeyDown}
       /*onInputChange={(text, event) => setFieldValue && setFieldValue(name, text)}*/
       onBlur={(e: any) => setFieldTouched && setFieldTouched(name, true)}
       placeholder={placeholder}
