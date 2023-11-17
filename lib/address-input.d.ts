@@ -11,6 +11,8 @@ interface AddressInputParams {
     setFieldTouched: (name: string | undefined, value: boolean) => void;
     emptyLabel: React.ReactNode;
     searchText: React.ReactNode;
+    onKeyDown?: any
+
 }
-export declare const AddressInput: ({ id, name, isValid, isInvalid, placeholder, value, setFieldValue, setFieldTouched, emptyLabel, searchText }: AddressInputParams) => JSX.Element;
+export declare const AddressInput: ({ id, name, isValid, isInvalid, placeholder, value, setFieldValue, setFieldTouched, emptyLabel, searchText, onKeyDown }: AddressInputParams) => JSX.Element;
 export {};
